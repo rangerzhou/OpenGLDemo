@@ -1,12 +1,12 @@
-package com.aptiv.OpenGLDemo.renderer
+package com.aptiv.opengldemo.renderer
 
-import com.aptiv.OpenGLDemo.renderer.objects.Triangle
+import com.aptiv.opengldemo.renderer.objects.Triangle
 import android.content.res.Resources
 import android.graphics.SurfaceTexture
 import android.opengl.GLES31.*
 import android.opengl.GLSurfaceView
-import com.aptiv.OpenGLDemo.renderer.core.MatrixState
-import com.aptiv.OpenGLDemo.renderer.objects.Square
+import com.aptiv.opengldemo.renderer.core.MatrixState
+import com.aptiv.opengldemo.renderer.objects.Square
 import timber.log.Timber
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10

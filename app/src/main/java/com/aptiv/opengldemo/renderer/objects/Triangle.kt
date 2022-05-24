@@ -1,11 +1,11 @@
-package com.aptiv.OpenGLDemo.renderer.objects
+package com.aptiv.opengldemo.renderer.objects
 
 import android.content.res.Resources
 import android.opengl.GLES31
-import com.aptiv.OpenGLDemo.renderer.core.GLHelper.COORDS_PER_VEC3
-import com.aptiv.OpenGLDemo.renderer.core.GLHelper.createByteBuffer
-import com.aptiv.OpenGLDemo.renderer.core.MatrixState
-import com.aptiv.OpenGLDemo.renderer.shaders.ShaderTriangle
+import com.aptiv.opengldemo.renderer.core.GLHelper.COORDS_PER_VEC3
+import com.aptiv.opengldemo.renderer.core.GLHelper.createByteBuffer
+import com.aptiv.opengldemo.renderer.core.MatrixState
+import com.aptiv.opengldemo.renderer.shaders.ShaderTriangle
 import java.nio.ByteBuffer
 
 internal class Triangle(resources: Resources) {

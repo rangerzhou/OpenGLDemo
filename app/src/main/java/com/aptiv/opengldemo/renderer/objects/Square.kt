@@ -1,4 +1,4 @@
-package com.aptiv.OpenGLDemo.renderer.objects
+package com.aptiv.opengldemo.renderer.objects
 
 import java.nio.ByteBuffer
 import java.nio.ByteOrder

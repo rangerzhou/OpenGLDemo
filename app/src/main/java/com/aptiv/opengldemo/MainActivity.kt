@@ -1,4 +1,4 @@
-package com.aptiv.OpenGLDemo
+package com.aptiv.opengldemo
 
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.*
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.aptiv.OpenGLDemo.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

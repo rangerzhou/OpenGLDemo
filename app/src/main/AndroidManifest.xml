@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.aptiv.OpenGLDemo">
+    package="com.aptiv.opengldemo">
     <!-- Tell the system this app requires OpenGL ES 3.1. -->
     <uses-feature android:glEsVersion="0x00030001" android:required="true" />
     <application
-        android:name="com.aptiv.OpenGLDemo.MainApplication"
+        android:name="com.aptiv.opengldemo.MainApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,7 +16,7 @@
         android:theme="@style/FullScreen"
         tools:targetApi="31">
         <activity
-            android:name="com.aptiv.OpenGLDemo.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

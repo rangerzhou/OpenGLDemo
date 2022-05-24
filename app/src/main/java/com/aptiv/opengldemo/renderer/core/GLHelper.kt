@@ -1,4 +1,4 @@
-package com.aptiv.OpenGLDemo.renderer.core
+package com.aptiv.opengldemo.renderer.core
 
 import android.opengl.GLES31
 import android.opengl.GLU

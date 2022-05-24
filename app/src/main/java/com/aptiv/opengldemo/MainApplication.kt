@@ -1,4 +1,4 @@
-package com.aptiv.OpenGLDemo
+package com.aptiv.opengldemo
 
 import android.app.Application
 import timber.log.Timber

@@ -1,4 +1,4 @@
-package com.aptiv.OpenGLDemo.renderer
+package com.aptiv.opengldemo.renderer
 
 import android.content.Context
 import android.opengl.GLSurfaceView
