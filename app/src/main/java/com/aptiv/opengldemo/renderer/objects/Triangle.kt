@@ -14,7 +14,6 @@ internal class Triangle(resources: Resources) {
     private var colorBuffer: ByteBuffer // 顶点颜色数据缓冲
     var xAngle = 0f
 
-
     companion object {
         const val COORDS_PER_VERTEX = 3
         const val COORDS_PER_COLOR = 4
