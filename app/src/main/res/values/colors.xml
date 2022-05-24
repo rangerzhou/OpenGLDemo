@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#FF728084</color>
+    <color name="colorPrimaryDark">#282828</color>
+    <color name="colorAccent">#ffaa00</color>
+
+    <color name="colorSpeedLimitSign">#84474c</color>
+
+    <!-- Theme colors: Surface View -->
+    <color name="colorHostCar">#FFFFFF</color>
+    <color name="colorDetectedObject">@color/colorPrimary</color>
+    <color name="colorTargetedObject">@color/colorAccent</color>
+    <color name="colorWarning">#BF002B</color>
+    <color name="colorAlert">#ffaa00</color>
+    <color name="colorShadow">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="transparent_bg">#00FFFFFF</color>
+    <color name="colorGray">#d1e0e0</color>
+    <color name="colorGreen">#00ff00</color>
+    <color name="colorRed">#e50012</color>
+    <color name="colorYellow">#ffff00</color>
+    <color name="colorGrey">#a4a4a4</color>
+</resources>
