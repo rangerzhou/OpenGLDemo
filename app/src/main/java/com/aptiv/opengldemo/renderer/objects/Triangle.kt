@@ -2,17 +2,19 @@ package com.aptiv.opengldemo.renderer.objects
 
 import android.content.res.Resources
 import android.opengl.GLES31
+import com.aptiv.opengldemo.renderer.MyGLSurfaceView
 import com.aptiv.opengldemo.renderer.core.GLHelper.COORDS_PER_VEC3
 import com.aptiv.opengldemo.renderer.core.GLHelper.createByteBuffer
 import com.aptiv.opengldemo.renderer.core.MatrixState
 import com.aptiv.opengldemo.renderer.shaders.ShaderTriangle
 import java.nio.ByteBuffer
+import kotlin.concurrent.thread
 
-internal class Triangle(resources: Resources) {
+internal class Triangle(resources: Resources, private val myGLSurfaceView: MyGLSurfaceView) {
     private val shader: ShaderTriangle
     private var vertexBuffer: ByteBuffer // 顶点坐标数据缓冲
     private var colorBuffer: ByteBuffer // 顶点颜色数据缓冲
-    var xAngle = 0f
+    private var xAngle = 0f
 
     companion object {
         const val COORDS_PER_VERTEX = 3
@@ -36,6 +38,8 @@ internal class Triangle(resources: Resources) {
             0f, 0f, 1f, 0f // 蓝色
         )
 
+        var isRotateThreadStart = false
+
     }
 
     init {
@@ -44,7 +48,18 @@ internal class Triangle(resources: Resources) {
         colorBuffer = createByteBuffer(colors)
     }
 
-    fun draw(/*mvPMatrix: FloatArray*/) {
+    fun draw() {
+        // 在线程中循环设置旋转角度
+        if (!isRotateThreadStart) {
+            thread(start = true) {
+                while (true) {
+                    myGLSurfaceView.requestRender()
+                    xAngle += 0.375f
+                    Thread.sleep(20)
+                }
+            }
+            isRotateThreadStart = true
+        }
         shader.use()
 
         // 3. 通过 VBO 将顶点数据传进渲染管线，管线进行基本处理后再传递给顶点着色器
@@ -75,7 +90,7 @@ internal class Triangle(resources: Resources) {
             shader.vPMatrixHandle,
             1,
             false,
-            /*getFinalMatrix(mMMatrix)*/MatrixState.getFinalMatrix(), // 获取总变换矩阵
+            MatrixState.getFinalMatrix(), // 获取总变换矩阵
             0
         )
 

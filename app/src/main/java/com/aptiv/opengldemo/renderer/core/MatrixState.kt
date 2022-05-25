@@ -12,6 +12,9 @@ class MatrixState {
         private val stack = Array(10) { FloatArray(16) } // 用于保存变换矩阵的栈
         private var stackTop = -1 // 栈顶索引
 
+        /**
+         * 初始化矩阵用于旋转
+         */
         fun setInitStack() {
             Matrix.setRotateM(currentMatrix, 0, 0f, 1f, 0f, 0f)
         }
