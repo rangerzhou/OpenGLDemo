@@ -6,7 +6,7 @@ import timber.log.Timber
 
 open class Shader(vertRes: Int, fragRes: Int, resources: Resources) {
 
-    private var program: Int
+    protected var program: Int
 
     companion object {
         private fun getShaderCode(resources: Resources, rawResId: Int): String {

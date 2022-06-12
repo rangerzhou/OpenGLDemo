@@ -86,13 +86,7 @@ internal class Triangle(resources: Resources, private val myGLSurfaceView: MyGLS
         MatrixState.setInitStack() // 初始化变换矩阵
         MatrixState.translate(0f, 0f, 1f) // 设置沿 Z 轴正向平移
         MatrixState.rotate(xAngle, 1f, 1f, 1f) // 设置绕 x y z 轴旋转
-        GLES31.glUniformMatrix4fv(
-            shader.vPMatrixHandle,
-            1,
-            false,
-            MatrixState.getFinalMatrix(), // 获取总变换矩阵
-            0
-        )
+        GLES31.glUniformMatrix4fv(shader.vPMatrixHandle, 1, false, MatrixState.getFinalMatrix(), 0)
 
         GLES31.glDrawArrays(GLES31.GL_TRIANGLES, 0, vertexCount) // 画！
         GLES31.glDisableVertexAttribArray(shader.positionHandle)

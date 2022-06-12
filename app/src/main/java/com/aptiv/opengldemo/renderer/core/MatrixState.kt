@@ -5,9 +5,9 @@ import android.opengl.Matrix
 class MatrixState {
     companion object {
         private val currentMatrix = FloatArray(16) // 当前变换矩阵，基本变换矩阵
-        private val viewMatrix = FloatArray(16) // 摄像机观察矩阵
-        private val projectionMatrix = FloatArray(16) // 投影矩阵
-        private val mvpMatrix = FloatArray(16) // 总变换矩阵
+        val viewMatrix = FloatArray(16) // 摄像机观察矩阵
+        val projectionMatrix = FloatArray(16) // 投影矩阵
+        val mvpMatrix = FloatArray(16) // 总变换矩阵
 
         private val stack = Array(10) { FloatArray(16) } // 用于保存变换矩阵的栈
         private var stackTop = -1 // 栈顶索引
