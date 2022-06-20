@@ -1,10 +1,13 @@
 package com.aptiv.opengldemo.renderer.objects
 
 import android.content.res.Resources
+import android.opengl.GLES31
 import com.aptiv.opengldemo.R
+import com.aptiv.opengldemo.model.AdasState
 import com.aptiv.opengldemo.renderer.MeshCache
 import com.aptiv.opengldemo.renderer.ThemeConfigurator
 import com.aptiv.opengldemo.renderer.core.Colors.toVec3
+import com.aptiv.opengldemo.renderer.core.GLState
 import com.aptiv.opengldemo.renderer.meshes.MeshObj
 import com.aptiv.opengldemo.renderer.shaders.ShaderObject
 import glm_.mat4x4.Mat4
@@ -35,7 +38,8 @@ internal class HostCar(resources: Resources, meshCache: MeshCache) {
         shaderCar.setObjectToWorld(Mat4())
     }
 
-    fun draw(worldToScreen: Mat4, worldToView: Mat4) {
+    fun draw(/*state: AdasState,*/ worldToScreen: Mat4, worldToView: Mat4/*, time: Long*/) {
+        //GLState.enableDepthTest() // 开启更新深度缓冲区，视觉效果更真实
         // Car 汽车
         shaderCar.use()
         shaderCar.setWorldToView(worldToView)
@@ -44,5 +48,11 @@ internal class HostCar(resources: Resources, meshCache: MeshCache) {
         shaderCar.setMVPMatrix()*/
         shaderCar.setColor(ThemeConfigurator.theme.hostCarColor.toVec3(), 1.0f)
         meshCar.drawOnce(shaderCar.attribPosition, shaderCar.attribNormal)
+
+        GLState.enableBlend(GLES31.GL_ONE, GLES31.GL_ONE)
+        //GLState.enableBlend(GLES31.GL_SRC_ALPHA, GLES31.GL_ONE_MINUS_SRC_ALPHA)
+        //GLState.disableDepthWrites()
+
+        //GLState.restoreDefaults()
     }
 }
